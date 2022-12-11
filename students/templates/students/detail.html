@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Студент{% endblock %}
+
+{% block content %}
+<h1>Студент</h1>
+<br>
+<div class="row">
+    <div class="col-md">
+        <p>Имя Студента: {{object.name}}</p>
+        <p>Фамилия Студента: {{object.surname}}</p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'students:home' %}">
+            <button type="button" class="btn btn-light">Назад к списку</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
