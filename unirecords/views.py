@@ -70,4 +70,4 @@ class UnirecordDetailView(DetailView):
 #     page_number = request.GET.get('page')
 #     page_obj = lst.get_page(page_number)
 #     context = {'page_obj': page_obj,}
-#     return render(request, 'trains/home.html', context)
+#     return render(request, 'unirecords/home.html', context)
