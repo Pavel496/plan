@@ -17,7 +17,7 @@ __all__ = (
 )
 
 class StudentListView(ListView):
-    paginate_by = 2
+    paginate_by = 3
     model = Student
     template_name = 'students/home.html'
 
