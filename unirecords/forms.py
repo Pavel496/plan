@@ -8,10 +8,10 @@ class UnirecordForm(forms.ModelForm):
         'class': 'form-control',
         'placeholder': 'Введите характеристику записи'
     }))
-    record_date = forms.DateField(label='Дата', widget=forms.DateField(attrs={
-        'class': 'form-control',
-        'placeholder': 'Введите дату'})
-    )
+    # record_date = forms.DateField(label='Дата', widget=forms.DateField(attrs={
+    #     'class': 'form-control',
+    #     'placeholder': 'Введите дату'})
+    # )
     student = forms.ModelChoiceField(
         label='Имя студента',
         queryset=Student.objects.all(), widget=forms.Select(attrs={'class': 'form-control'})

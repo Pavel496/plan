@@ -16,16 +16,16 @@ __all__ = (
     # 'home',
     'UnirecordListView',
     'UnirecordDetailView',
-    # 'UnirecordCreateView',
-    # 'UnirecordUpdateView',
-    # 'UnirecordDeleteView',
+    'UnirecordCreateView',
+    'UnirecordUpdateView',
+    'UnirecordDeleteView',
 )
 
-# class UnirecordDeleteView(SuccessMessageMixin, DeleteView):
-#     model = Unirecord
-#     template_name = 'unirecords/delete.html'
-#     success_url = reverse_lazy('unirecords:home')
-#     success_message = "Универсальная запись успешно удалена"
+class UnirecordDeleteView(SuccessMessageMixin, DeleteView):
+    model = Unirecord
+    template_name = 'unirecords/delete.html'
+    success_url = reverse_lazy('unirecords:home')
+    success_message = "Универсальная запись успешно удалена"
 
 class UnirecordListView(ListView):
     paginate_by = 10
@@ -37,22 +37,22 @@ class UnirecordDetailView(DetailView):
     # form_class = UnirecordForm
     queryset = Unirecord.objects.all()
     template_name = 'unirecords/detail.html'
-#
-#
-# class TrainCreateView(SuccessMessageMixin, CreateView):
-#     model = Train
-#     form_class = TrainForm
-#     template_name = 'unirecords/create.html'
-#     success_url = reverse_lazy('unirecords:home')
-#     success_message = "Поезд успешно создан"
-#
-#
-# class TrainUpdateView(SuccessMessageMixin, UpdateView):
-#     model = Train
-#     form_class = TrainForm
-#     template_name = 'unirecords/update.html'
-#     success_url = reverse_lazy('unirecords:home')
-#     success_message = "Поезд успешно отредактирован"
+
+
+class UnirecordCreateView(SuccessMessageMixin, CreateView):
+    model = Unirecord
+    form_class = UnirecordForm
+    template_name = 'unirecords/create.html'
+    success_url = reverse_lazy('unirecords:home')
+    success_message = "Поезд успешно создан"
+
+
+class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
+    model = Unirecord
+    form_class = UnirecordForm
+    template_name = 'unirecords/update.html'
+    success_url = reverse_lazy('unirecords:home')
+    success_message = "Поезд успешно отредактирован"
 
 
 
