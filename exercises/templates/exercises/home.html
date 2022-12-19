@@ -7,28 +7,24 @@
     <div class="col-md-8 mx-auto my-2">
         <table class="table table-striped">
             <tr>
-                <th>Характеристика</th>
-                <th>Дата</th>
-                <th>Время</th>
-                <th>Студент</th>
+                <th>Код упражнения</th>
+                <th>Описание упражнения</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </tr>
         {% for object in page_obj %}
             <tr>
                 <td>
-                    <a href="{% url 'unirecords:detail' pk=object.pk%}">{{object.record_name}}</a>
+                    <a href="{% url 'exercises:detail' pk=object.pk%}">{{object.exercise_name}}</a>
                 </td>
-                <td>{{object.record_date}}</td>
-                <td>{{object.record_time}}</td>
-                <td>{{object.student}}</td>
+                <td>{{object.exercise_description}}</td>
                 <td>
-                    <a href="{% url 'unirecords:update' pk=object.pk%}">
+                    <a href="{% url 'exercises:update' pk=object.pk%}">
                         <button type="submit" class="btn btn-primary">Редактировать</button>
                     </a>
                 </td>
                 <td>
-                    <a href="{% url 'unirecords:delete' pk=object.pk%}">
+                    <a href="{% url 'exercises:delete' pk=object.pk%}">
                         <button type="submit" class="btn btn-danger">Удалить</button>
                     </a>
                 </td>
