@@ -1,18 +1,13 @@
 # from django.core.exceptions import ValidationError
 from django.db import models
-from students.models import Student
 
 
-
-class Unirecord(models.Model):
-    record_name = models.CharField(max_length=50)
-    record_date = models.DateField(null=True, blank=True)
-    record_time = models.TimeField(null=True, blank=True)
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-
+class Exercise(models.Model):
+    exercise_name = models.CharField(max_length=50)
+    exercise_description = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'Запись {self.record_name} от {self.record_date} время {self.record_time}'
+        return self.exercise_name
 
     class Meta:
-        ordering = ['record_date', 'record_time']
+        ordering = ['exercise_name']
