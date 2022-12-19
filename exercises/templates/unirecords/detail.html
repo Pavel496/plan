@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Запись{% endblock %}
+
+{% block content %}
+<h1>Запись</h1>
+<div class="row">
+    <div class="col-md">
+        <table class="table table-striped">
+            <tr>
+                <th>Характеристика</th>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Студент</th>
+
+            </tr>
+            <tr>
+                <td>{{object.record_name}}</td>
+                <td>{{object.record_date}}</td>
+                <td>{{object.record_time}}</td>
+                <td>{{object.student}}</td>
+
+
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'unirecords:home' %}">
+            <button type="button" class="btn btn-light">Назад к списку</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
+

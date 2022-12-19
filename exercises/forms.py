@@ -1,28 +1,18 @@
 from django import forms
-import datetime
-from students.models import Student
-from unirecords.models import Unirecord
+
+from exercises.models import Exercise
 
 
-class UnirecordForm(forms.ModelForm):
-    record_name = forms.CharField(label='Универсальная запись', widget=forms.TextInput(attrs={
+class ExerciseForm(forms.ModelForm):
+    exercise_name = forms.CharField(label='Код упражнения', widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Введите характеристику записи'
-    }))        # , required=True
-    record_date = forms.DateField(label='Дата', initial=datetime.date.today, widget=forms.DateInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Введите дату'
+        'placeholder': 'Введите код упражнения'
     }))
-    record_time = forms.TimeField(label='Время', initial=datetime.time, widget=forms.TimeInput(attrs={
+    exercise_description = forms.CharField(label='Описание упражнения', widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Введите время'}))
-    student = forms.ModelChoiceField(
-        label='Имя студента',
-        queryset=Student.objects.all(), widget=forms.Select(attrs={
-            'class': 'form-control'
+        'placeholder': 'Введите описание упражнения'
     }))
-
 
     class Meta:
-        model = Unirecord
-        fields = '__all__'
+        model = Exercise
+        fields = ('exercise_name', 'exercise_description',)
