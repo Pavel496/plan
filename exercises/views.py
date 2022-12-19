@@ -9,50 +9,50 @@ from django.views.generic import (
     ListView
 )
 
-from unirecords.forms import UnirecordForm
-from unirecords.models import Unirecord
+from exercises.forms import ExerciseForm
+from exercises.models import Exercise
 
 __all__ = (
     # 'home',
-    'UnirecordListView',
-    'UnirecordDetailView',
-    'UnirecordCreateView',
-    'UnirecordUpdateView',
-    'UnirecordDeleteView',
+    'ExerciseListView',
+    'ExerciseDetailView',
+    'ExerciseCreateView',
+    'ExerciseUpdateView',
+    'ExerciseDeleteView',
 )
 
-class UnirecordDeleteView(SuccessMessageMixin, DeleteView):
-    model = Unirecord
-    template_name = 'unirecords/delete.html'
-    success_url = reverse_lazy('unirecords:home')
-    success_message = "Универсальная запись успешно удалена"
+class ExerciseDeleteView(SuccessMessageMixin, DeleteView):
+    model = Exercise
+    template_name = 'exercises/delete.html'
+    success_url = reverse_lazy('exercises:home')
+    success_message = "Упражнение успешно удалено"
 
-class UnirecordListView(ListView):
+class ExerciseListView(ListView):
     paginate_by = 10
-    model = Unirecord
-    template_name = 'unirecords/home.html'
+    model = Exercise
+    template_name = 'exercises/home.html'
 
 
-class UnirecordDetailView(DetailView):
-    # form_class = UnirecordForm
-    queryset = Unirecord.objects.all()
-    template_name = 'unirecords/detail.html'
+class ExerciseDetailView(DetailView):
+    # form_class = ExerciseForm
+    queryset = Exercise.objects.all()
+    template_name = 'exercises/detail.html'
 
 
-class UnirecordCreateView(SuccessMessageMixin, CreateView):
-    model = Unirecord
-    form_class = UnirecordForm
-    template_name = 'unirecords/create.html'
-    success_url = reverse_lazy('unirecords:home')
-    success_message = "Запись успешно создана"
+class ExerciseCreateView(SuccessMessageMixin, CreateView):
+    model = Exercise
+    form_class = ExerciseForm
+    template_name = 'exercises/create.html'
+    success_url = reverse_lazy('exercises:home')
+    success_message = "Упражнение успешно создано"
 
 
-class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
-    model = Unirecord
-    form_class = UnirecordForm
-    template_name = 'unirecords/update.html'
-    success_url = reverse_lazy('unirecords:home')
-    success_message = "Запись успешно отредактирована"
+class ExerciseUpdateView(SuccessMessageMixin, UpdateView):
+    model = Exercise
+    form_class = ExerciseForm
+    template_name = 'exercises/update.html'
+    success_url = reverse_lazy('exercises:home')
+    success_message = "Упражнение успешно отредактировано"
 
 
 
@@ -70,4 +70,4 @@ class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
 #     page_number = request.GET.get('page')
 #     page_obj = lst.get_page(page_number)
 #     context = {'page_obj': page_obj,}
-#     return render(request, 'unirecords/home.html', context)
+#     return render(request, 'exercises/home.html', context)
