@@ -9,6 +9,7 @@
             <tr>
                 <th>Характеристика</th>
                 <th>Дата</th>
+                <th>Время</th>
                 <th>Студент</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -16,10 +17,10 @@
         {% for object in page_obj %}
             <tr>
                 <td>
-                    <a href="{% url 'unirecords:detail' pk=object.pk%}">{{object.name}}</a>
+                    <a href="{% url 'unirecords:detail' pk=object.pk%}">{{object.record_name}}</a>
                 </td>
-                <td>{{object.name}}</td>
                 <td>{{object.record_date}}</td>
+                <td>{{object.record_time}}</td>
                 <td>{{object.student}}</td>
                 <td>
                     <a href="{% url 'unirecords:update' pk=object.pk%}">
@@ -33,7 +34,6 @@
                 </td>
 
             </tr>
-
 
         {% endfor %}
         </table>

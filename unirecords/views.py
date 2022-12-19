@@ -44,7 +44,7 @@ class UnirecordCreateView(SuccessMessageMixin, CreateView):
     form_class = UnirecordForm
     template_name = 'unirecords/create.html'
     success_url = reverse_lazy('unirecords:home')
-    success_message = "Поезд успешно создан"
+    success_message = "Запись успешно создана"
 
 
 class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
@@ -52,7 +52,7 @@ class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
     form_class = UnirecordForm
     template_name = 'unirecords/update.html'
     success_url = reverse_lazy('unirecords:home')
-    success_message = "Поезд успешно отредактирован"
+    success_message = "Запись успешно отредактирована"
 
 
 
