@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Exercise(models.Model):
-    exercise_name = models.CharField(max_length=50)
+    exercise_name = models.CharField(max_length=20)
     exercise_description = models.CharField(max_length=200)
 
     def __str__(self):
