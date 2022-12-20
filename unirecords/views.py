@@ -23,35 +23,35 @@ __all__ = (
 
 class UnirecordDeleteView(SuccessMessageMixin, DeleteView):
     model = Unirecord
-    template_name = 'exercises/delete.html'
-    success_url = reverse_lazy('exercises:home')
+    template_name = 'unirecords/delete.html'
+    success_url = reverse_lazy('unirecords:home')
     success_message = "Универсальная запись успешно удалена"
 
 class UnirecordListView(ListView):
     paginate_by = 10
     model = Unirecord
-    template_name = 'exercises/home.html'
+    template_name = 'unirecords/home.html'
 
 
 class UnirecordDetailView(DetailView):
     # form_class = UnirecordForm
     queryset = Unirecord.objects.all()
-    template_name = 'exercises/detail.html'
+    template_name = 'unirecords/detail.html'
 
 
 class UnirecordCreateView(SuccessMessageMixin, CreateView):
     model = Unirecord
     form_class = UnirecordForm
-    template_name = 'exercises/create.html'
-    success_url = reverse_lazy('exercises:home')
+    template_name = 'unirecords/create.html'
+    success_url = reverse_lazy('unirecords:home')
     success_message = "Запись успешно создана"
 
 
 class UnirecordUpdateView(SuccessMessageMixin, UpdateView):
     model = Unirecord
     form_class = UnirecordForm
-    template_name = 'exercises/update.html'
-    success_url = reverse_lazy('exercises:home')
+    template_name = 'unirecords/update.html'
+    success_url = reverse_lazy('unirecords:home')
     success_message = "Запись успешно отредактирована"
 
 
