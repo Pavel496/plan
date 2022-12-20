@@ -13,7 +13,7 @@ class UnirecordForm(forms.ModelForm):
         'class': 'form-control',
         'placeholder': 'Введите дату'
     }))
-    record_time = forms.TimeField(label='Время', initial=datetime.time, widget=forms.TimeInput(attrs={
+    record_time = forms.TimeField(label='Время', initial=datetime.datetime.now(), widget=forms.TimeInput(attrs={
         'class': 'form-control',
         'placeholder': 'Введите время'}))
     student = forms.ModelChoiceField(

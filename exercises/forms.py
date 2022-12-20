@@ -8,7 +8,7 @@ class ExerciseForm(forms.ModelForm):
         'class': 'form-control',
         'placeholder': 'Введите код упражнения'
     }))
-    exercise_description = forms.CharField(label='Описание упражнения', widget=forms.TextInput(attrs={
+    exercise_description = forms.CharField(label='Описание упражнения', widget=forms.Textarea(attrs={
         'class': 'form-control',
         'placeholder': 'Введите описание упражнения'
     }))
