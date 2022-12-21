@@ -37,6 +37,7 @@ class UnirecordForm(forms.ModelForm):
         'placeholder': 'Введите время'}))
 
 
+
     class Meta:
         model = Unirecord
         fields = '__all__'
